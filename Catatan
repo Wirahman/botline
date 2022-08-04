@@ -1,3 +1,8 @@
 Untuk testing
 1. Jalankan aplikasi = npm run dev
 2. Copas return webhook ke webhook line developer
+
+Cara push git
+1. git add .
+2. git commit -m "[pesan commit]"
+3. git push
