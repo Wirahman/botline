@@ -11,17 +11,18 @@ module.exports = async function App() {
 
 //Untuk handle event balasan chat berupa teks
 async function HandleMessage(context) {
-  if(context.event.isText) {
+  let input = context.event.isText;
+  if(input) {
     // Untuk handle apabila bot menerima input berupa text
-    if(context.event.text.toLowerCase() === 'blubuk') {
+    if(input.toLowerCase() === 'blubuk') {
           await context.replyText(
             'Ya Hadir'
           );
-    } else if(context.event.text.toLowerCase() === 'freya'){
+    } else if(input.toLowerCase() === 'freya'){
       await context.replyText(
         'Gas main mobile legend'
       );
-    // } else if(context.event.text.toLowerCase().indexOf("blu") != 1){
+    // } else if(input.indexOf("blu").toLowerCase() != 1){
     //   await context.replyText(
     //     'Ya Hadir, Blubuk Disini...'
     //   );
