@@ -36,7 +36,11 @@ async function HandleMessage(context) {
         await context.replyText(
           'Cie cie yang ehem ehem sama hell...'
         );
-      }
+      } else if(context.event.text.toLowerCase() === 'profilpengguna'){
+        await context.replyText(
+          context.session.user
+        );
+      } 
     } 
   }else if(context.event.isLocation){
     //Untuk handle apabila bot menerima input berupa lokasi
