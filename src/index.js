@@ -38,9 +38,11 @@ async function HandleMessage(context) {
         );
       } else if(context.event.text.toLowerCase() === 'profilpengguna'){
         await context.replyText(
-          context.session.user
+          '${
+            context.session.user
+          }'
         );
-      } 
+      }
     } 
   }else if(context.event.isLocation){
     //Untuk handle apabila bot menerima input berupa lokasi
