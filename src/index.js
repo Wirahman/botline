@@ -21,9 +21,9 @@ async function HandleMessage(context) {
       await context.replyText(
         'Gas main mobile legend'
       );
-    } else if(context.event.text.toLowerCase().indexOf("wir") != 1){
+    } else if(context.event.text.toLowerCase().indexOf("blu") != 1){
       await context.replyText(
-        'Maaf Lagi testing'
+        'Ya Hadir, Blubuk Disini...'
       );
     } 
     
