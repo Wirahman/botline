@@ -21,7 +21,12 @@ async function HandleMessage(context) {
       await context.replyText(
         'Gas main mobile legend'
       );
-    }
+    } else if(context.event.text.toLowerCase().indexOf("wir" != 1)){
+      await context.replyText(
+        'Halo Nama saya wirahman'
+      );
+    } 
+    
   }else if(context.event.isLocation){
     //Untuk handle apabila bot menerima input berupa lokasi
   }
