@@ -25,6 +25,20 @@ async function HandleMessage(context) {
       await context.replyText(
         'Ya Hadir, Blubuk Disini...'
       );
+    }  else if(context.event.text.toLowerCase().indexOf('hell') >= 0){
+      if(context.event.text.toLowerCase() === 'hell'){
+        await context.replyText(
+          'Hell Dipanggil tuh...'
+        );
+      } else if(context.event.text.toLowerCase().indexOf('nakal') >= 0){
+        await context.replyText(
+          'Iya emank, nakal si hell... Marahin aja kak...'
+        );
+      } else if(context.event.text.toLowerCase().indexOf('bandel') >= 0){
+        await context.replyText(
+          'Cie cie yang ehem ehem sama hell...'
+        );
+      }
     } 
   }else if(context.event.isLocation){
     //Untuk handle apabila bot menerima input berupa lokasi
