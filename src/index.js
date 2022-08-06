@@ -21,10 +21,10 @@ async function HandleMessage(context) {
       await context.replyText(
         'Gas main mobile legend'
       );
-    } else if(context.event.text.toLowerCase().indexOf("blu") != 1){
-      await context.replyText(
-        'Ya Hadir, Blubuk Disini...'
-      );
+    // } else if(context.event.text.toLowerCase().indexOf("blu") != 1){
+    //   await context.replyText(
+    //     'Ya Hadir, Blubuk Disini...'
+    //   );
     } 
     
   }else if(context.event.isLocation){
