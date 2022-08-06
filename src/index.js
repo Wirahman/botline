@@ -38,7 +38,7 @@ async function HandleMessage(context) {
         );
       } else if(context.event.text.toLowerCase() === 'profilpengguna'){
         await context.replyText(
-          console.log(context.session.user);
+          console.log(context.session.user)
         );
       } 
     } 
