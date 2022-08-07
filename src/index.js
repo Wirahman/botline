@@ -24,7 +24,7 @@ async function HandleMessage(context) {
       await context.replyText(
         'Gas main mobile legend'
       );
-    } if(context.event.text.toLowerCase() === 'Andi') {
+    } else if(context.event.text.toLowerCase() === 'andi') {
       await context.replyText(
         'Hallo nama saya andi...'
       );
