@@ -1,5 +1,10 @@
 const { router, line } = require('bottender/router');
-//Untuk local variable penampung order dan total harga
+// const { api } = require('messaging-api-line');
+
+// const client = new api({
+//   accessToken: 'qjhTFVIwTQmUL5u8uohcGVOcwdkMgQtqyR8MN96HaxWMH56UT5hHmLHewPYNBC9bQMbLrL3SXxgyAQRxLGTydadDvnyGwJ1WnS6N9PE8uIFB+Id75gQ4UEcLIMlGFkwiz5kYNNKGYE/xk6/RzXmA/gdB04t89/1O/w1cDnyilFU=',
+//   channelSecret: 'faad076cdc0af36786d50db3066d6586',
+// });
 
 module.exports = async function App() {
   return router([
@@ -19,6 +24,10 @@ async function HandleMessage(context) {
       await context.replyText(
         'Gas main mobile legend'
       );
+    } if(context.event.text.toLowerCase() === 'Andi') {
+      await context.replyText(
+        'Hallo nama saya andi...'
+      );
     } else if(context.event.text.toLowerCase().indexOf('blu') >= 0){
       await context.replyText(
         'Ya Hadir, Blubuk Disini...'
@@ -36,12 +45,22 @@ async function HandleMessage(context) {
         await context.replyText(
           'Cie cie yang ehem ehem sama hell...'
         );
-      } else if(context.event.text.toLowerCase() === 'profilpengguna'){
-        await context.replyText(
-          console.log(context.session.user)
-        );
-      } 
+      }
+    } else if(context.event.text.toLowerCase() === 'profilpengguna'){
+      // await context.replyText(
+      //   console.log(context.session.user)
+      // );
+
+      // client.reply(REPLY_TOKEN, [
+      //   api.createText('Hello'),
+      //   api.createImage({
+      //     originalContentUrl: 'https://i.pinimg.com/564x/44/05/66/4405664b090a9b633d6f04519a47b885.jpg',
+      //     previewImageUrl: 'https://i.pinimg.com/564x/44/05/66/4405664b090a9b633d6f04519a47b885.jpg',
+      //   }),
+      //   api.createText('End'),
+      // ]);
     } 
+
   }else if(context.event.isLocation){
     //Untuk handle apabila bot menerima input berupa lokasi
   }
