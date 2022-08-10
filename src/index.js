@@ -1,4 +1,7 @@
-const { router, line, LineNotify  } = require('bottender/router');
+const { router, line  } = require('bottender/router');
+
+const { LineNotify } = require('bottender');
+const { withProps } = require('bottender');
 // const { api } = require('messaging-api-line');
 
 // const client = new api({
