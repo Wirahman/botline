@@ -1,7 +1,5 @@
 const { router, line  } = require('bottender/router');
 
-const { LineNotify } = require('bottender');
-const { withProps } = require('bottender');
 // const { api } = require('messaging-api-line');
 
 // const client = new api({
@@ -24,7 +22,7 @@ module.exports = async function App() {
 };
 
 //Untuk handle event tentang chat tentang blubuk
-async function ChatBlubuk(context, { name }){
+async function ChatBlubuk(context){
   if(context.event.text.toLowerCase().indexOf('blubuk') >= 0){
     if(context.event.text.toLowerCase() === 'blubuk') {
       await context.replyText(
@@ -32,7 +30,7 @@ async function ChatBlubuk(context, { name }){
       );
     }else if(context.event.text.toLowerCase().indexOf('halo') >= 0) {
       await context.sendText(
-        'Hallo juga ${name}.', {
+        'Hallo juga kakak.', {
           emojis: [
             {
               index: 14,
