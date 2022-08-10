@@ -17,14 +17,12 @@ module.exports = async function App() {
   // return HandleMessage;
   return router([
     line.message(HandleMessage),
+    line.message(ChatBlubuk),
   ]);
 };
 
-//Untuk handle event balasan chat berupa teks
-async function HandleMessage(context) {
-  if(context.event.isText) {
-    // Untuk handle apabila bot menerima input berupa text
-    
+//Untuk handle event tentang chat tentang blubuk
+async function ChatBlubuk(context){
   if(context.event.text.toLowerCase().indexOf('blubuk') >= 0){
     if(context.event.text.toLowerCase() === 'blubuk') {
       await context.replyText(
@@ -32,18 +30,17 @@ async function HandleMessage(context) {
       );
     }else if(context.event.text.toLowerCase().indexOf('halo') >= 0) {
       await context.sendText(
-        'Hallo juga kakak...', {
-          emojis: [
-            {
-              index: 14,
-              productId: '5ac1bfd5040ab15980c9b435',
-              emojiId: '001',
-            },
-          ],
-        }
+        'Hallo juga kakak.'
       );
     }
-  } else if(context.event.text.toLowerCase() === 'freya'){
+  }  
+}
+
+//Untuk handle event balasan chat berupa teks
+async function HandleMessage(context) {
+  if(context.event.isText) {
+    // Untuk handle apabila bot menerima input berupa text
+    if(context.event.text.toLowerCase() === 'freya'){
       await context.replyText(
         'Gas main mobile legend'
       );
