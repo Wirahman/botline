@@ -30,7 +30,7 @@ async function ChatBlubuk(context){
       );
     }else if(context.event.text.toLowerCase().indexOf('halo') >= 0) {
       await context.sendText(
-        'Hallo juga kakak.'
+        'Hallo juga kakak...'
       );
     }
   }  
