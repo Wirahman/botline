@@ -1,5 +1,5 @@
 Untuk testing konsole
-1. Jalankan konsole aplikasi = npm run dev -- --console
+1. Jalankan konsole aplikasi = npm run dev -- --console / npm start -- --console
 2. pakai yang return HandleMessage di module.export
 
 Untuk testing

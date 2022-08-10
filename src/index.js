@@ -71,101 +71,95 @@ async function HandleMessage(context) {
   }else if(context.event.isLocation){
     //Untuk handle apabila bot menerima input berupa lokasi
   }
-  
-  async function HandleFollow(context) {
-    await context.sendFlex('Handle Follow', {
-      type: 'bubble',
-      hero: {
-        type: 'image',
-        url: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png',
-        size: 'full',
-        aspectRatio: '20:13',
-      },
-      body: {
-        type: 'box',
-        layout: 'vertical',
-        contents: [
-          {
-            type: 'text',
-            text: 'Yuk kita Ngopi...',
-            weight: 'bold',
-            size: 'xl',
-          },
-          {
-            type: 'box',
-            layout: 'vertical',
-            margin: 'lg',
-            contents: [
-              {
-                type: 'box',
-                layout: 'baseline',
-                contents: [
-                  {
-                    type: 'text',
-                    text: 'Place',
-                    color: '#aaaaaa',
-                    size: 'sm',
-                    flex: 1,
-                  },
-                  {
-                    type: 'text',
-                    text: 'Terima Kasih Sudah Follow...',
-                    wrap: true,
-                    color: '#666666',
-                    size: 'sm',
-                    flex: 5,
-                  },
-                ],
-              },
-            ],
-          },
-        ],
-      },
-      footer: {
-        type: 'box',
-        layout: 'vertical',
-        contents: [
-          {
-            type: 'button',
-            action: {
-              type: 'uri',
-              label: 'WEBSITE',
-              uri: 'https://linecorp.com',
-            },
-          },
-        ],
-      },
-    });
-
-  }
-  async function HandleUnfollow(context) {
-    await context.sendFlex('This is a hello world flex', {
-      type: 'bubble',
-      body: {
-        type: 'box',
-        layout: 'horizontal',
-        contents: [
-          {
-            type: 'text',
-            text: 'Sampai,',
-          },
-          {
-            type: 'text',
-            text: 'Jumpa!',
-          },
-        ],
-      },
-    });
-  }
-
-
-
-
-
-
-
-
-
-
-
+  // End Handle Message
 }
+
+
+async function HandleFollow(context) {
+  await context.sendFlex('Handle Follow', {
+    type: 'bubble',
+    hero: {
+      type: 'image',
+      url: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png',
+      size: 'full',
+      aspectRatio: '20:13',
+    },
+    body: {
+      type: 'box',
+      layout: 'vertical',
+      contents: [
+        {
+          type: 'text',
+          text: 'Yuk kita Ngopi...',
+          weight: 'bold',
+          size: 'xl',
+        },
+        {
+          type: 'box',
+          layout: 'vertical',
+          margin: 'lg',
+          contents: [
+            {
+              type: 'box',
+              layout: 'baseline',
+              contents: [
+                {
+                  type: 'text',
+                  text: 'Place',
+                  color: '#aaaaaa',
+                  size: 'sm',
+                  flex: 1,
+                },
+                {
+                  type: 'text',
+                  text: 'Terima Kasih Sudah Follow...',
+                  wrap: true,
+                  color: '#666666',
+                  size: 'sm',
+                  flex: 5,
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    footer: {
+      type: 'box',
+      layout: 'vertical',
+      contents: [
+        {
+          type: 'button',
+          action: {
+            type: 'uri',
+            label: 'WEBSITE',
+            uri: 'https://linecorp.com',
+          },
+        },
+      ],
+    },
+  });
+//End HandleFollow
+}
+
+async function HandleUnfollow(context) {
+  await context.sendFlex('This is a hello world flex', {
+    type: 'bubble',
+    body: {
+      type: 'box',
+      layout: 'horizontal',
+      contents: [
+        {
+          type: 'text',
+          text: 'Sampai,',
+        },
+        {
+          type: 'text',
+          text: 'Jumpa!',
+        },
+      ],
+    },
+  });
+  // End Handle Unfollow
+}
+
