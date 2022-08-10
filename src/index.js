@@ -105,7 +105,7 @@ async function HandleFollow(context) {
               contents: [
                 {
                   type: 'text',
-                  text: 'Place',
+                  text: 'Hallo...',
                   color: '#aaaaaa',
                   size: 'sm',
                   flex: 1,
