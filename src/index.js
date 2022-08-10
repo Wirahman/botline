@@ -27,7 +27,7 @@ async function ChatBlubuk(context, { name }){
       await context.replyText(
         'Ya Hadir, Blubuk Disini...'
       );
-    }else if(context.event.text.toLowerCase().indexOf('halo')) {
+    }else if(context.event.text.toLowerCase().indexOf('halo') >= 0) {
       await context.sendText(
         'Hallo juga ${name}.', {
           emojis: [
