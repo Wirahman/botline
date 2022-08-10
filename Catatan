@@ -1,3 +1,7 @@
+Untuk testing konsole
+1. Jalankan konsole aplikasi = npm run dev -- --console
+2. pakai yang return HandleMessage di module.export
+
 Untuk testing
 1. Jalankan aplikasi = npm run dev
 2. Copas return webhook ke webhook line developer
@@ -6,5 +10,8 @@ Cara push git
 1. git add .
 2. git commit -m "[pesan commit]"
 3. git push
+
+Install bottender pertama kali di sourcecode ketika download zip
+1. npm install -g bottender
 
 Webhook Url Heroku = https://botblubuk.herokuapp.com/webhooks/line

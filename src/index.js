@@ -1,4 +1,4 @@
-const { router, line } = require('bottender/router');
+const { router, line, LineNotify  } = require('bottender/router');
 // const { api } = require('messaging-api-line');
 
 // const client = new api({
@@ -6,21 +6,48 @@ const { router, line } = require('bottender/router');
 //   channelSecret: 'faad076cdc0af36786d50db3066d6586',
 // });
 
+const lineNotify = new LineNotify({
+  clientId: '<LINE_NOTIFY_CLIENT_ID>',
+  clientSecret: '<LINE_NOTIFY_CLIENT_SECRET>',
+  redirectUri: 'https://example.com/your/notify/redirect/path',
+});
+
 module.exports = async function App() {
+  // return HandleMessage;
   return router([
     line.message(HandleMessage),
+    line.message(ChatBlubuk),
   ]);
 };
+
+//Untuk handle event tentang chat tentang blubuk
+async function ChatBlubuk(context, { name }){
+  if(context.event.text.toLowerCase().indexOf('blubuk') >= 0){
+    if(context.event.text.toLowerCase() === 'blubuk') {
+      await context.replyText(
+        'Ya Hadir, Blubuk Disini...'
+      );
+    }else if(context.event.text.toLowerCase().indexOf('halo')) {
+      await context.sendText(
+        'Hallo juga ${name}.', {
+          emojis: [
+            {
+              index: 14,
+              productId: '5ac1bfd5040ab15980c9b435',
+              emojiId: '001',
+            },
+          ],
+        }
+      );
+    }
+  }  
+}
 
 //Untuk handle event balasan chat berupa teks
 async function HandleMessage(context) {
   if(context.event.isText) {
     // Untuk handle apabila bot menerima input berupa text
-    if(context.event.text.toLowerCase() === 'blubuk') {
-          await context.replyText(
-            'Ya Hadir'
-          );
-    } else if(context.event.text.toLowerCase() === 'freya'){
+    if(context.event.text.toLowerCase() === 'freya'){
       await context.replyText(
         'Gas main mobile legend'
       );
@@ -28,11 +55,7 @@ async function HandleMessage(context) {
       await context.replyText(
         'Hallo nama saya andi...'
       );
-    } else if(context.event.text.toLowerCase().indexOf('blu') >= 0){
-      await context.replyText(
-        'Ya Hadir, Blubuk Disini...'
-      );
-    }  else if(context.event.text.toLowerCase().indexOf('hell') >= 0){
+    } else if(context.event.text.toLowerCase().indexOf('hell') >= 0){
       if(context.event.text.toLowerCase() === 'hell'){
         await context.replyText(
           'Hell Dipanggil tuh...'
