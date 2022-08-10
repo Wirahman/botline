@@ -7,12 +7,6 @@ const { router, line  } = require('bottender/router');
 //   channelSecret: 'faad076cdc0af36786d50db3066d6586',
 // });
 
-const lineNotify = new LineNotify({
-  clientId: '<LINE_NOTIFY_CLIENT_ID>',
-  clientSecret: '<LINE_NOTIFY_CLIENT_SECRET>',
-  redirectUri: 'https://example.com/your/notify/redirect/path',
-});
-
 module.exports = async function App() {
   // return HandleMessage;
   return router([
