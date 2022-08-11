@@ -17,7 +17,11 @@ module.exports = async function App() {
 };
 
 async function SayHi(context, props) {
-  await context.sendText(`Hi, ${props.name}.`);
+  if(context.event.isText) {
+    if(context.event.text.toLowerCase().indexOf('Sayhi') >= 0){
+      await context.sendText(`Hi, ${props.name}.`);
+    }
+  }
 }
 
 //Untuk handle event balasan chat berupa teks
