@@ -10,11 +10,15 @@ const { router, line  } = require('bottender/router');
 module.exports = async function App() {
   // return HandleMessage;
   return router([
-    line.message(HandleMessage),
+    line.message(HandleMessage, SayHi),
     line.follow(HandleFollow),
     line.unfollow(HandleUnfollow),
   ]);
 };
+
+async function SayHi(context, props) {
+  await context.sendText(`Hi, ${props.name}.`);
+}
 
 //Untuk handle event balasan chat berupa teks
 async function HandleMessage(context) {
