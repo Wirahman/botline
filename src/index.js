@@ -18,7 +18,7 @@ module.exports = async function App() {
 
 async function SayHi(context, props) {
   if(context.event.isText) {
-    if(context.event.text.toLowerCase().indexOf('Sayhi') >= 0){
+    if(context.event.text.toLowerCase().indexOf('sayhi') >= 0){
       await context.sendText(`Hi, ${props.name}.`);
     }
   }
