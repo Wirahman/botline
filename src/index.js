@@ -10,19 +10,11 @@ const { router, line  } = require('bottender/router');
 module.exports = async function App() {
   // return HandleMessage;
   return router([
-    line.message(HandleMessage, SayHi),
+    line.message(HandleMessage),
     line.follow(HandleFollow),
     line.unfollow(HandleUnfollow),
   ]);
 };
-
-async function SayHi(context, props) {
-  if(context.event.isText) {
-    if(context.event.text.toLowerCase().indexOf('sayhi') >= 0){
-      await context.sendText(`Hi, ${props.name}.`);
-    }
-  }
-}
 
 //Untuk handle event balasan chat berupa teks
 async function HandleMessage(context) {
@@ -84,7 +76,7 @@ async function HandleMessage(context) {
 
 
 async function HandleFollow(context) {
-  await context.sendFlex('Handle Follow', {
+  await context.sendFlex('Terima Kasih sudah Follow', {
     type: 'bubble',
     hero: {
       type: 'image',
